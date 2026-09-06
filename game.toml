@@ -1,0 +1,44 @@
+
+[game]
+name = "Vib-Ribbon"
+id = "SCES-02873"
+players = 1
+exe = "disc/SCES_028.73"
+disc = "disc/Vib-Ribbon (Europe) (En,Fr,De,Es,It).cue"
+load_address = "0x80010000"
+entry_pc = "0x80011F2C"
+text_size = "0x00006800"
+stack_base = "0x801FFFF0"
+
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 1).bin"
+cue_name = "Vib-Ribbon (Europe) (En,Fr,De,Es,It).cue"
+boot_exe = "SCES_028.73"
+known_sizes = [15680784, 215363232]
+known_md5 = ["1a6c411a13d1a440ff23963e3721d2be", "5043418bf3c855526e1ca0c139cd7a00"]
+known_sha1 = ["a2ba376167bda9ed03ab89a11ade12410d75ede7", "7318f692b41a42b0f2f41785c842f95d8c977b8d"]
+known_crc32 = ["0f387227", "c03e4427"]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+window_title = "Vib-Ribbon Recompiled"
+memcard_dir = "saves"
+openbios = false
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+[netplay]
+require_cue = true
+required_tracks = 8
+required_disc_fp = "b5e1844423236500e99413df8947439eed36e295ffea255bb3a120d21e39082f"
